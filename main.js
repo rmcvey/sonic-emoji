@@ -8,9 +8,9 @@ var sonicServer
 var SonicSocket, SonicServer, SonicCoder
 
 document.getElementById('start').addEventListener('click', () => {
-  SonicSocket = require('../lib/sonic-socket.js');
-  SonicServer = require('../lib/sonic-server.js');
-  SonicCoder = require('../lib/sonic-coder.js');
+  SonicSocket = require('./lib/sonic-socket.js');
+  SonicServer = require('./lib/sonic-server.js');
+  SonicCoder = require('./lib/sonic-coder.js');
   createSonicNetwork();
 })
 
