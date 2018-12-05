@@ -1,17 +1,18 @@
-var SonicSocket = require('../lib/sonic-socket.js');
-var SonicServer = require('../lib/sonic-server.js');
-var SonicCoder = require('../lib/sonic-coder.js');
-
-
 var EMOTICONS = ['happy', 'sad', 'heart', 'mad', 'star', 'oh'];
 // Calculate the alphabet based on the emoticons.
 var ALPHABET = generateAlphabet(EMOTICONS);
 var PLACEHOLDER = 'img/placeholder.gif';
 
 var sonicSocket;
-var sonicServer;
+var sonicServer
+var SonicSocket, SonicServer, SonicCoder
 
-createSonicNetwork();
+document.getElementById('start').addEventListener('click', () => {
+  SonicSocket = require('../lib/sonic-socket.js');
+  SonicServer = require('../lib/sonic-server.js');
+  SonicCoder = require('../lib/sonic-coder.js');
+  createSonicNetwork();
+})
 
 function createSonicNetwork(opt_coder) {
   // Stop the sonic server if it is listening.
