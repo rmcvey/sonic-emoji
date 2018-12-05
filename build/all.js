@@ -416,7 +416,7 @@ module.exports = SonicServer;
 },{"./ring-buffer.js":1,"./sonic-coder.js":2}],4:[function(require,module,exports){
 var SonicCoder = require('./sonic-coder.js');
 
-var audioContext = new window.AudioContext || new webkitAudioContext();
+var audioContext = window.AudioContext ? new window.AudioContext : new webkitAudioContext();
 
 /**
  * Encodes text as audio streams.
