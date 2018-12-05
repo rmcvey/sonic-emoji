@@ -161,7 +161,7 @@ SonicServer.prototype.start = function() {
   var constraints = {
     audio: { optional: [{ echoCancellation: false }] }
   };
-  navigator.webkitGetUserMedia(constraints,
+  navigator.mediaDevices.webkitGetUserMedia(constraints,
       this.onStream_.bind(this), this.onStreamError_.bind(this));
 };
 
