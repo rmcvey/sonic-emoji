@@ -164,8 +164,8 @@ SonicServer.prototype.start = function() {
   };
 
   navigator.mediaDevices.getUserMedia(constraints)
-    .then(stream => this.onStream_)
-    .catch(err => this.onStreamError_)
+    .then(stream => this.onStream_(stream))
+    .catch(err => this.onStreamError_(err))
 };
 
 /**
