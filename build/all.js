@@ -159,10 +159,13 @@ var State = {
 SonicServer.prototype.start = function() {
   // Start listening for microphone. Continue init in onStream.
   var constraints = {
-    audio: { optional: [{ echoCancellation: false }] }
+    audio: true,
+    video: false
   };
-  navigator.mediaDevices.webkitGetUserMedia(constraints,
-      this.onStream_.bind(this), this.onStreamError_.bind(this));
+
+  navigator.mediaDevices.getUserMedia(constraints)
+    .then(stream => this.onStream_)
+    .catch(err => this.onStreamError_)
 };
 
 /**
